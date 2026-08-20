@@ -4,8 +4,11 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     // === WhatsApp Configuration ===
-    const WHATSAPP_NUMBER = '918660998149'; // Replace with client's actual WhatsApp number (including country code, without + or spaces)
+    const WHATSAPP_NUMBER = '918660998149'; // Your WhatsApp number (for floating button & contact links)
     const WHATSAPP_DEFAULT_TEXT = "Hi Vishwa Tailors, I'd like to enquire about your services.";
+
+    // === Backend API URL (handles Twilio WhatsApp notifications securely) ===
+    const API_BASE_URL = ''; // Empty = same origin (when served via server.js)
 
     // Dynamically update all WhatsApp links in the page
     function updateWhatsAppLinks() {
@@ -178,6 +181,23 @@ document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('appointmentForm');
     const formSuccess = document.getElementById('formSuccess');
 
+    // --- Send appointment to backend API (which sends WhatsApp via Twilio) ---
+    async function sendWhatsAppNotification(data) {
+        try {
+            const response = await fetch(`${API_BASE_URL}/api/book-appointment`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            });
+
+            const result = await response.json();
+            return result.success;
+        } catch (error) {
+            console.error('WhatsApp notification error:', error);
+            return false;
+        }
+    }
+
     function showError(id, message) {
         const input = document.getElementById(id);
         const error = document.getElementById('error-' + id.replace('form-', ''));
@@ -266,29 +286,15 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         if (isValid) {
-            // Construct WhatsApp message
+            // Collect form data
             const serviceText = document.getElementById('form-service').options[document.getElementById('form-service').selectedIndex].text;
-            const time = document.getElementById('form-time').value || 'Not specified';
+            const time = document.getElementById('form-time').value || '';
+            const timeText = time
+                ? document.getElementById('form-time').options[document.getElementById('form-time').selectedIndex].text 
+                : 'Not specified';
             const message = document.getElementById('form-message').value.trim();
 
-            const whatsappMsg = encodeURIComponent(
-                `Hello Vishwa Tailors! 🧵\n\n` +
-                `I'd like to book an appointment:\n` +
-                `📌 Name: ${name}\n` +
-                `📱 Phone: ${phone}\n` +
-                `${email ? '📧 Email: ' + email + '\n' : ''}` +
-                `🪡 Service: ${serviceText}\n` +
-                `📅 Date: ${date}\n` +
-                `🕐 Time: ${time}\n` +
-                `${message ? '📝 Notes: ' + message + '\n' : ''}\n` +
-                `Looking forward to hearing from you!`
-            );
-
-            // Open immediately inside synchronous click event context to avoid browser popup blockers
-            console.log('Appointment data ready. Redirecting to WhatsApp.');
-            window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMsg}`, '_blank');
-
-            // Simulate form submission visual feedback
+            // Show loading state on button
             const submitBtn = document.getElementById('form-submit');
             submitBtn.innerHTML = `
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="spin"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
@@ -297,10 +303,33 @@ document.addEventListener('DOMContentLoaded', () => {
             submitBtn.disabled = true;
             submitBtn.style.opacity = '0.7';
 
-            setTimeout(() => {
-                form.style.display = 'none';
-                formSuccess.style.display = 'block';
-            }, 1000);
+            // Send appointment data to backend API (which sends WhatsApp via Twilio)
+            sendWhatsAppNotification({
+                name: name,
+                phone: phone,
+                email: email || '',
+                service: serviceText,
+                date: date,
+                time: timeText,
+                message: message || ''
+            })
+                .then((success) => {
+                    // Show success to customer regardless
+                    form.style.display = 'none';
+                    formSuccess.style.display = 'block';
+
+                    if (success) {
+                        console.log('✅ WhatsApp notification sent to shop owner successfully.');
+                    } else {
+                        console.warn('⚠️ WhatsApp notification may not have been delivered.');
+                    }
+                })
+                .catch(() => {
+                    // Still show success to the customer
+                    form.style.display = 'none';
+                    formSuccess.style.display = 'block';
+                    console.warn('⚠️ WhatsApp notification failed to send.');
+                });
         } else {
             // Scroll to first error
             const firstError = form.querySelector('.error');
