@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vishwa Tailors — Bespoke Tailoring & Custom Stitching Studio</title>
+    <meta name="description" content="Expert tailoring, custom stitching, alterations, and bespoke clothing crafted with precision. Experience luxury fashion tailoring at Vishwa Tailors.">
+    <meta name="keywords" content="tailor, custom stitching, bespoke tailoring, alterations, dress stitching, suit tailoring, wedding wear, blouse stitching">
+    <meta name="author" content="Vishwa Tailors">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader" class="preloader" aria-hidden="true">
+        <div class="preloader-inner">
+            <div class="preloader-scissors">✂</div>
+            <span class="preloader-text">Vishwa Tailors</span>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <header id="navbar" class="navbar">
+        <div class="container navbar-inner">
+            <a href="#home" class="logo" aria-label="Vishwa Tailors Home">
+                <span class="logo-icon">✂</span>
+                <div class="logo-text">
+                    <span class="logo-name">Vishwa</span>
+                    <span class="logo-sub">Tailors</span>
+                </div>
+            </a>
+
+            <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#gallery" class="nav-link">Our Work</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+
+            <a href="#appointment" class="btn btn-primary nav-cta" id="navCta">Book Appointment</a>
+
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+        <nav class="mobile-menu-inner" aria-label="Mobile navigation">
+            <a href="#home" class="mobile-link">Home</a>
+            <a href="#about" class="mobile-link">About</a>
+            <a href="#services" class="mobile-link">Services</a>
+            <a href="#gallery" class="mobile-link">Our Work</a>
+            <a href="#contact" class="mobile-link">Contact</a>
+            <a href="#appointment" class="btn btn-primary mobile-cta">Book Appointment</a>
+        </nav>
+    </div>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-bg">
+                <canvas id="silkCanvas" class="silk-canvas"></canvas>
+                <div class="hero-gradient-overlay"></div>
+            </div>
+            <div class="hero-content container">
+                <h1 class="hero-title animate-on-scroll">Perfect Fit.<br><em>Timeless Style.</em></h1>
+                <p class="hero-subtitle animate-on-scroll">Expert tailoring and custom stitching crafted to fit you perfectly.</p>
+                <div class="hero-buttons animate-on-scroll">
+                    <a href="#appointment" class="btn btn-primary btn-lg">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                        Book an Appointment
+                    </a>
+                    <a href="#services" class="btn btn-outline btn-lg">
+                        Explore Our Services
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-scroll-indicator">
+                <span>Scroll</span>
+                <div class="scroll-line"></div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section about">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-image-wrapper animate-on-scroll">
+                        <div class="about-image-frame">
+                            <img src="images/about.jpg" alt="Premium tailoring tools, fabrics, and scissors on mahogany surface" loading="lazy">
+                        </div>
+                        <div class="about-experience-badge">
+                            <span class="about-exp-number">18</span>
+                            <span class="about-exp-text">Years of<br>Excellence</span>
+                        </div>
+                    </div>
+                    <div class="about-content animate-on-scroll">
+                        <span class="section-label">Our Story</span>
+                        <h2 class="section-title">Crafting Elegance,<br>One Stitch at a Time</h2>
+                        <div class="about-divider"></div>
+                        <p class="about-text">
+                            At Vishwa Tailors, we believe that every garment tells a story. Since 2005, our master tailors have been dedicated to the art of bespoke clothing — where precision measurements meet premium fabrics, and meticulous craftsmanship transforms into garments that fit like a second skin.
+                        </p>
+                        <p class="about-text">
+                            From custom suits and blazers to intricate sherwanis and precision alterations, every piece that leaves our studio reflects our unwavering commitment to quality. We don't just stitch clothes — we create confidence.
+                        </p>
+                        <div class="about-features">
+                            <div class="about-feature">
+                                <div class="about-feature-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                                </div>
+                                <div>
+                                    <h4>Premium Fabrics</h4>
+                                    <p>Hand-selected quality materials</p>
+                                </div>
+                            </div>
+                            <div class="about-feature">
+                                <div class="about-feature-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+                                </div>
+                                <div>
+                                    <h4>Precision Fitting</h4>
+                                    <p>Custom measurements for perfect fit</p>
+                                </div>
+                            </div>
+                            <div class="about-feature">
+                                <div class="about-feature-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                                </div>
+                                <div>
+                                    <h4>Crafted with Love</h4>
+                                    <p>Attention to every single detail</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="section services">
+            <div class="container">
+                <div class="section-header animate-on-scroll">
+                    <span class="section-label">What We Offer</span>
+                    <h2 class="section-title">Our Services</h2>
+                    <p class="section-desc">From bespoke tailoring to precision alterations, we deliver exceptional craftsmanship for every occasion.</p>
+                </div>
+                <div class="services-grid">
+                    <div class="service-card animate-on-scroll" id="service-custom-tailoring">
+                        <div class="service-icon-wrap">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+                                <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/>
+                                <polyline points="14,2 14,8 20,8"/>
+                                <line x1="16" y1="13" x2="8" y2="13"/>
+                                <line x1="16" y1="17" x2="8" y2="17"/>
+                                <polyline points="10,9 9,9 8,9"/>
+                            </svg>
+                        </div>
+                        <h3>Custom Tailoring</h3>
+                        <p>Bespoke garments designed and tailored to your exact measurements, style preferences, and fabric choices.</p>
+                        <span class="service-link">Learn More →</span>
+                    </div>
+                    <div class="service-card animate-on-scroll" id="service-dress-suit">
+                        <div class="service-icon-wrap">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+                                <path d="M6 2l3 5H4L6 2z M18 2l3 5h-5L18 2z"/>
+                                <path d="M4 7h16v2a8 8 0 01-4 6.93V22H8v-6.07A8 8 0 014 9V7z"/>
+                            </svg>
+                        </div>
+                        <h3>Suit & Blazer Stitching</h3>
+                        <p>Perfectly fitted suits and blazers crafted with premium fabrics and expert construction techniques.</p>
+                        <span class="service-link">Learn More →</span>
+                    </div>
+                    <div class="service-card animate-on-scroll" id="service-blouse">
+                        <div class="service-icon-wrap">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+                                <path d="M20.38 3.46L16 2 12 5.5 8 2l-4.38 1.46a2 2 0 00-1.34 1.43l-.69 3.45A2 2 0 003.54 10L6 12v8a2 2 0 002 2h8a2 2 0 002-2v-8l2.46-2a2 2 0 001.95-1.66l-.69-3.45a2 2 0 00-1.34-1.43z"/>
+                            </svg>
+                        </div>
+                        <h3>Kurta & Sherwani Stitching</h3>
+                        <p>Intricately designed and perfectly fitted ethnic wear for every occasion — from everyday kurtas to groom collections.</p>
+                        <span class="service-link">Learn More →</span>
+                    </div>
+                    <div class="service-card animate-on-scroll" id="service-alterations">
+                        <div class="service-icon-wrap">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+                                <circle cx="6" cy="6" r="3"/>
+                                <circle cx="6" cy="18" r="3"/>
+                                <line x1="20" y1="4" x2="8.12" y2="15.88"/>
+                                <line x1="14.47" y1="14.48" x2="20" y2="20"/>
+                                <line x1="8.12" y1="8.12" x2="12" y2="12"/>
+                            </svg>
+                        </div>
+                        <h3>Alterations</h3>
+                        <p>Expert alteration services — hemming, resizing, fitting adjustments, and repairs to make any garment fit perfectly.</p>
+                        <span class="service-link">Learn More →</span>
+                    </div>
+                    <div class="service-card animate-on-scroll" id="service-shirt-pant">
+                        <div class="service-icon-wrap">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+                                <rect x="3" y="3" width="7" height="9" rx="1"/>
+                                <rect x="14" y="3" width="7" height="9" rx="1"/>
+                                <path d="M5 12v7a2 2 0 002 2h2a2 2 0 002-2v-7"/>
+                                <path d="M16 12v7a2 2 0 002 2h.5a2 2 0 002-2v-7"/>
+                            </svg>
+                        </div>
+                        <h3>Shirt & Pant Tailoring</h3>
+                        <p>Perfectly tailored shirts and trousers with impeccable fit, premium stitching, and your choice of fabrics.</p>
+                        <span class="service-link">Learn More →</span>
+                    </div>
+                    <div class="service-card animate-on-scroll" id="service-wedding">
+                        <div class="service-icon-wrap">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+                                <path d="M12 2l2.09 6.26L20 9.27l-4.91 3.81L16.18 20 12 16.77 7.82 20l1.09-6.92L4 9.27l5.91-1.01z"/>
+                            </svg>
+                        </div>
+                        <h3>Wedding & Occasion Wear</h3>
+                        <p>Stunning groom wear, sherwanis, bandhgalas, and occasion outfits designed to make your special day unforgettable.</p>
+                        <span class="service-link">Learn More →</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery" class="section gallery">
+            <div class="container">
+                <div class="section-header animate-on-scroll">
+                    <span class="section-label">Portfolio</span>
+                    <h2 class="section-title">Our Work</h2>
+                    <p class="section-desc">A showcase of our finest bespoke creations — each piece crafted with passion and precision.</p>
+                </div>
+                <div id="ag-root" class="accordion-gallery animate-on-scroll" role="list" aria-label="Image accordion gallery">
+                    <a class="ag-panel ag-panel--active" role="listitem" tabindex="0" aria-current="true" aria-label="Bespoke Suit" data-index="0">
+                        <span class="ag-panel__frame">
+                            <span class="ag-panel__media">
+                                <img src="images/media_1787205378532.png" alt="Sewing Machine Close-up" draggable="false">
+                            </span>
+                            <span class="ag-panel__overlay" aria-hidden="true"></span>
+                        </span>
+                        <span class="ag-panel__label" aria-hidden="true">
+                            <span class="ag-panel__bar"></span>
+                            <span class="ag-panel__text">Precision Stitching</span>
+                        </span>
+                    </a>
+                    
+                    <a class="ag-panel" role="listitem" tabindex="0" aria-label="Master Cutting" data-index="1">
+                        <span class="ag-panel__frame">
+                            <span class="ag-panel__media">
+                                <img src="images/media_1787205595828.png" alt="Tailor Cutting Fabric" draggable="false">
+                            </span>
+                            <span class="ag-panel__overlay" aria-hidden="true"></span>
+                        </span>
+                        <span class="ag-panel__label" aria-hidden="true">
+                            <span class="ag-panel__bar"></span>
+                            <span class="ag-panel__text">Master Cutting</span>
+                        </span>
+                    </a>
+
+                    <a class="ag-panel" role="listitem" tabindex="0" aria-label="Linen Shirts" data-index="2">
+                        <span class="ag-panel__frame">
+                            <span class="ag-panel__media">
+                                <img src="images/media_1787205716068.png" alt="Linen Shirt" draggable="false">
+                            </span>
+                            <span class="ag-panel__overlay" aria-hidden="true"></span>
+                        </span>
+                        <span class="ag-panel__label" aria-hidden="true">
+                            <span class="ag-panel__bar"></span>
+                            <span class="ag-panel__text">Linen Shirts</span>
+                        </span>
+                    </a>
+
+                    <a class="ag-panel" role="listitem" tabindex="0" aria-label="Premium Details" data-index="3">
+                        <span class="ag-panel__frame">
+                            <span class="ag-panel__media">
+                                <img src="images/media_1787205852686.png" alt="Wooden Buttons" draggable="false">
+                            </span>
+                            <span class="ag-panel__overlay" aria-hidden="true"></span>
+                        </span>
+                        <span class="ag-panel__label" aria-hidden="true">
+                            <span class="ag-panel__bar"></span>
+                            <span class="ag-panel__text">Premium Details</span>
+                        </span>
+                    </a>
+
+                    <a class="ag-panel" role="listitem" tabindex="0" aria-label="Custom Trousers" data-index="4">
+                        <span class="ag-panel__frame">
+                            <span class="ag-panel__media">
+                                <img src="images/media_1787205977059.png" alt="Man in Trousers" draggable="false">
+                            </span>
+                            <span class="ag-panel__overlay" aria-hidden="true"></span>
+                        </span>
+                        <span class="ag-panel__label" aria-hidden="true">
+                            <span class="ag-panel__bar"></span>
+                            <span class="ag-panel__text">Custom Trousers</span>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us Section -->
+        <section id="why-us" class="section why-us">
+            <div class="container">
+                <div class="section-header animate-on-scroll">
+                    <span class="section-label">Why Choose Us</span>
+                    <h2 class="section-title">The Vishwa Difference</h2>
+                    <p class="section-desc">We combine traditional craftsmanship with modern precision to deliver garments that exceed expectations.</p>
+                </div>
+                <div class="why-grid">
+                    <div class="why-card animate-on-scroll" id="why-craftsmanship">
+                        <div class="why-number">01</div>
+                        <div class="why-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                        </div>
+                        <h3>Expert Craftsmanship</h3>
+                        <p>Our master tailors bring decades of experience and artisanal skill to every garment they create.</p>
+                    </div>
+                    <div class="why-card animate-on-scroll" id="why-measurements">
+                        <div class="why-number">02</div>
+                        <div class="why-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12h5"/><path d="M17 12h5"/><path d="M12 2v5"/><path d="M12 17v5"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="10"/></svg>
+                        </div>
+                        <h3>Perfect Measurements</h3>
+                        <p>Detailed body measurements ensure every garment fits like it was made for you — because it was.</p>
+                    </div>
+                    <div class="why-card animate-on-scroll" id="why-finishing">
+                        <div class="why-number">03</div>
+                        <div class="why-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l2.09 6.26L20 9.27l-4.91 3.81L16.18 20 12 16.77 7.82 20l1.09-6.92L4 9.27l5.91-1.01z"/></svg>
+                        </div>
+                        <h3>Premium Finishing</h3>
+                        <p>Every seam, button, and hem receives the finest finishing touches for a polished, luxurious look.</p>
+                    </div>
+                    <div class="why-card animate-on-scroll" id="why-designs">
+                        <div class="why-number">04</div>
+                        <div class="why-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4 12.5-12.5z"/></svg>
+                        </div>
+                        <h3>Personalized Designs</h3>
+                        <p>Your style, your vision. We collaborate with you to create garments that reflect your unique personality.</p>
+                    </div>
+                    <div class="why-card animate-on-scroll" id="why-delivery">
+                        <div class="why-number">05</div>
+                        <div class="why-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
+                        </div>
+                        <h3>On-Time Delivery</h3>
+                        <p>We respect your time. Every order is completed and delivered on or before the promised date.</p>
+                    </div>
+                    <div class="why-card animate-on-scroll" id="why-satisfaction">
+                        <div class="why-number">06</div>
+                        <div class="why-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+                        </div>
+                        <h3>Customer Satisfaction</h3>
+                        <p>Your satisfaction is our ultimate goal. We don't stop until you're completely delighted with the result.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Appointment Section -->
+        <section id="appointment" class="section appointment">
+            <div class="container">
+                <div class="appointment-grid">
+                    <div class="appointment-info animate-on-scroll">
+                        <span class="section-label">Get Started</span>
+                        <h2 class="section-title">Book Your<br>Appointment</h2>
+                        <p class="appointment-desc">Schedule a consultation with our master tailors. We'll discuss your requirements, take measurements, and help you choose the perfect fabric and design.</p>
+                        <div class="appointment-highlights">
+                            <div class="appointment-highlight">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+                                <span>Free consultation for new customers</span>
+                            </div>
+                            <div class="appointment-highlight">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+                                <span>Expert guidance on fabric & design</span>
+                            </div>
+                            <div class="appointment-highlight">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+                                <span>Precision body measurements</span>
+                            </div>
+                            <div class="appointment-highlight">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+                                <span>Walk-ins welcome during business hours</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="appointment-form-wrapper animate-on-scroll">
+                        <form id="appointmentForm" class="appointment-form" novalidate>
+                            <h3 class="form-title">Schedule a Visit</h3>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="form-name">Full Name <span class="required">*</span></label>
+                                    <input type="text" id="form-name" name="name" placeholder="Your full name" required>
+                                    <span class="form-error" id="error-name"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="form-phone">Phone Number <span class="required">*</span></label>
+                                    <input type="tel" id="form-phone" name="phone" placeholder="+91 XXXXX XXXXX" required>
+                                    <span class="form-error" id="error-phone"></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="form-email">Email Address</label>
+                                <input type="email" id="form-email" name="email" placeholder="your@email.com">
+                                <span class="form-error" id="error-email"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="form-service">Service Required <span class="required">*</span></label>
+                                <select id="form-service" name="service" required>
+                                    <option value="" disabled selected>Select a service</option>
+                                    <option value="custom-tailoring">Custom Tailoring</option>
+                                    <option value="suit-blazer">Suit & Blazer Stitching</option>
+                                    <option value="kurta-sherwani">Kurta & Sherwani Stitching</option>
+                                    <option value="alterations">Alterations</option>
+                                    <option value="shirt-pant">Shirt & Pant Tailoring</option>
+                                    <option value="wedding-wear">Wedding & Occasion Wear</option>
+                                    <option value="other">Other</option>
+                                </select>
+                                <span class="form-error" id="error-service"></span>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="form-date">Preferred Date <span class="required">*</span></label>
+                                    <input type="date" id="form-date" name="date" required>
+                                    <span class="form-error" id="error-date"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="form-time">Preferred Time</label>
+                                    <select id="form-time" name="time">
+                                        <option value="" disabled selected>Select a time</option>
+                                        <option value="10:00">10:00 AM</option>
+                                        <option value="11:00">11:00 AM</option>
+                                        <option value="12:00">12:00 PM</option>
+                                        <option value="14:00">2:00 PM</option>
+                                        <option value="15:00">3:00 PM</option>
+                                        <option value="16:00">4:00 PM</option>
+                                        <option value="17:00">5:00 PM</option>
+                                        <option value="18:00">6:00 PM</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="form-message">Additional Requirements</label>
+                                <textarea id="form-message" name="message" rows="3" placeholder="Tell us about your design preferences, fabric choice, or any special requirements..."></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-lg btn-full" id="form-submit">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                                Book Appointment
+                            </button>
+                        </form>
+                        <div id="formSuccess" class="form-success" style="display:none;">
+                            <div class="form-success-icon">✓</div>
+                            <h3>Appointment Booked!</h3>
+                            <p>Thank you! We'll confirm your appointment shortly via phone or WhatsApp.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section contact">
+            <div class="container">
+                <div class="section-header animate-on-scroll">
+                    <span class="section-label">Get in Touch</span>
+                    <h2 class="section-title">Contact Us</h2>
+                    <p class="section-desc">Reach out to us — we'd love to hear from you and craft your perfect fit.</p>
+                </div>
+                <div class="contact-grid">
+                    <div class="contact-cards animate-on-scroll">
+                        <div class="contact-card" id="contact-phone">
+                            <div class="contact-card-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+                            </div>
+                            <h4>Call Us</h4>
+                            <p><a href="tel:+918660998149" class="contact-link">+91 86609 98149</a></p>
+                        </div>
+                        <div class="contact-card" id="contact-whatsapp">
+                            <div class="contact-card-icon whatsapp-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                            </div>
+                            <h4>WhatsApp</h4>
+                            <p><a href="https://wa.me/918660998149?text=Hi%20Vishwa%20Tailors,%20I'd%20like%20to%20enquire%20about%20your%20services." class="contact-link" target="_blank" rel="noopener">+91 86609 98149</a></p>
+                        </div>
+                        <div class="contact-card" id="contact-email">
+                            <div class="contact-card-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                            </div>
+                            <h4>Email Us</h4>
+                            <p><a href="mailto:gvishwanath128@gmail.com" class="contact-link">gvishwanath128@gmail.com</a></p>
+                        </div>
+                        <div class="contact-card" id="contact-hours">
+                            <div class="contact-card-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
+                            </div>
+                            <h4>Opening Hours</h4>
+                            <p>Mon – Sat: 10:00 AM – 8:00 PM<br>Sunday: 10:00 AM – 2:00 PM</p>
+                        </div>
+                    </div>
+                    <div class="contact-map animate-on-scroll">
+                        <div class="map-wrapper">
+                            <iframe 
+                                src="https://maps.google.com/maps?q=15.198237,76.758527&z=16&output=embed" 
+                                width="100%" 
+                                height="100%" 
+                                style="border:0;" 
+                                allowfullscreen="" 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade"
+                                title="Vishwa Tailors Location on Google Maps">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#home" class="logo footer-logo" aria-label="Vishwa Tailors">
+                        <span class="logo-icon">✂</span>
+                        <div class="logo-text">
+                            <span class="logo-name">Vishwa</span>
+                            <span class="logo-sub">Tailors</span>
+                        </div>
+                    </a>
+                    <p class="footer-tagline">Crafting elegance, one stitch at a time. Your trusted partner for bespoke tailoring and custom stitching since 2005.</p>
+                    <div class="footer-social">
+                        <a href="#" class="social-icon" aria-label="Facebook" target="_blank" rel="noopener">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Instagram" target="_blank" rel="noopener">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="YouTube" target="_blank" rel="noopener">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29 29 0 001 11.75a29 29 0 00.46 5.33A2.78 2.78 0 003.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 001.94-2 29 29 0 00.46-5.25 29 29 0 00-.46-5.33z"/><polygon points="9.75,15.02 15.5,11.75 9.75,8.48"/></svg>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Pinterest" target="_blank" rel="noopener">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.372 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 01.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z"/></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-links-group">
+                    <h4>Quick Links</h4>
+                    <nav aria-label="Footer quick links">
+                        <a href="#home" class="footer-link">Home</a>
+                        <a href="#about" class="footer-link">About Us</a>
+                        <a href="#services" class="footer-link">Services</a>
+                        <a href="#gallery" class="footer-link">Our Work</a>
+                    </nav>
+                </div>
+                <div class="footer-links-group">
+                    <h4>Services</h4>
+                    <nav aria-label="Footer services">
+                        <a href="#services" class="footer-link">Custom Tailoring</a>
+                        <a href="#services" class="footer-link">Suit & Blazer Stitching</a>
+                        <a href="#services" class="footer-link">Kurta & Sherwani Stitching</a>
+                        <a href="#services" class="footer-link">Alterations</a>
+                        <a href="#services" class="footer-link">Wedding Wear</a>
+                    </nav>
+                </div>
+                <div class="footer-links-group">
+                    <h4>Contact Info</h4>
+                    <div class="footer-contact-item">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        <span>123 Fashion Street, MG Road<br>Bangalore 560001</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.362 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                        <a href="tel:+918660998149">+91 86609 98149</a>
+                    </div>
+                    <div class="footer-contact-item">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        <a href="mailto:gvishwanath128@gmail.com">gvishwanath128@gmail.com</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Vishwa Tailors. All rights reserved. Crafted with love in Bangalore.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/918660998149?text=Hi%20Vishwa%20Tailors,%20I'd%20like%20to%20enquire%20about%20your%20services." 
+       class="whatsapp-float" 
+       id="whatsappFloat"
+       target="_blank" 
+       rel="noopener" 
+       aria-label="Chat with us on WhatsApp">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        <span class="whatsapp-tooltip">Chat with us</span>
+    </a>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m18 15-6-6-6 6"/></svg>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
